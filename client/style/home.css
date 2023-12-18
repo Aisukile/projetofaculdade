@@ -1,0 +1,109 @@
+html body{
+    background-color: rgb(250, 249, 249);
+    color: white;
+}
+main{
+    height: 75%;
+}
+ /*.cabecalho div{
+    position: relative;
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+ }*/
+
+ header{
+    width: 100%;
+    background-color: rgb(190, 190, 2);
+}
+
+.cabecalho{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 20px;
+}
+
+.cabecalho div{
+    width: 33.3%;
+}
+
+.cabecalho .arrow a{
+    margin-left: 30px;
+}
+
+.cabecalho .arrow a img{
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.cabecalho .title{
+    text-align: center;
+}
+
+.cabecalho .title h1{
+    text-align: center;
+    color: white;
+}
+
+.cabecalho .logout{
+    text-align: right;
+}
+
+.cabecalho .logout a{
+    margin-right: 40px;
+}
+
+.cabecalho .logout a img{
+    max-width: 40px;
+    max-height: 40px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.card{
+    border: 5px;
+    box-shadow:  8px 8px 13px 0 rgb(32, 32, 32);
+    padding: 35px;
+    margin: 20px;
+    width: 400px;
+    transition:all 0.3s ease-out;
+}
+.card:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.card h2{
+    color: rgb(190, 190, 2);
+}
+
+.card p{
+    color: rgb(118, 117, 117);
+}
+
+.image{
+    float: right;
+    max-width: 40px;
+    max-height: 40px;
+}
+
+.color{
+    border-left: 3px solid rgb(190, 190, 2);
+}
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+footer p{
+    background-color: rgb(190, 190, 2);
+    text-align: center;
+    padding: 20px 0;
+}
