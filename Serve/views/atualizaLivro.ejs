@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/atualizaLivro.css">
+</head>
+<body>
+
+    <header>
+        <div class="cabecalho">
+            <div class="arrow">
+                <a href="home.html"><img src="images/seta-esquerda.png" /></a>
+            </div>
+            <div class="title">
+                <h1>ATUALIZAR LIVRO</h1>
+            </div>
+            <div class="logout">
+                <a href="login.html"><img src="images/sair.png"></a>
+            </div>
+        </div>
+    </header>
+    
+   
+    <div class="container">
+        <table class="card color" border="1">
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Autor</th>
+                    <th>Gênero</th>
+                    <th>Data de Publicação</th>
+                    <th>Editora</th>
+                    <th>Editar</th>
+                </tr>
+                <% livros.forEach(livro => { %>
+                    <tr>
+                        <td><%= livro.id %></td>
+                        <td><%= livro.name %></td>
+                        <td><%= livro.author %></td>
+                        <td><%= livro.genero %></td>
+                        <td><%= formatDate(livro.data_publicacao) %></td>
+                        <td><%= livro.editora %></td>
+                        <td><a href="/editarLivro/<%= livro.id %>">Editar</a></td>
+                    </tr>
+                <% }); %>
+       </table>
+    </body>
+
+    <% function formatDate(date) {
+        if (!date) return '';
+        const dateObject = new Date(date);
+        const timezoneOffset = dateObject.getTimezoneOffset();
+        dateObject.setMinutes(dateObject.getMinutes() + timezoneOffset);
+        const options = { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' };
+        const formattedDate = dateObject.toLocaleDateString('pt-BR', options);
+        return formattedDate;
+    } %>
+    <footer>
+        <p>Todos os direitos reservados - &copy; 2023</p>
+    </footer>
+</body>
+</html>
